@@ -6,17 +6,13 @@ const tableRoutes = require('./routes/tables');
 
 const app = express();
 
-// Middlewares
 app.use(cors());
 app.use(express.json());
 
-// Database connection
 connectDB();
 
-// Routes
 app.use('/tables', tableRoutes);
 
-// Root
 app.get('/', (req, res) => {
   res.json({ message: 'Table API - Jeancarlospp' });
 });
